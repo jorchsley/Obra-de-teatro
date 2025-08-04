@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obra de Teatro - Inicio</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome para íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="floating-header">
+        <h1>Nombre de la Obra</h1>
+        <nav class="floating-nav">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i>Inicio</a></li>
+                <li><a href="actores.html"><i class="fas fa-users"></i>Actores</a></li>
+                <li><a href="escenografia.html"><i class="fas fa-paint-roller"></i>Escenografía</a></li>
+                <li><a href="documentacion.html"><i class="fas fa-file-alt"></i>Documentación</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Descripción</h2>
+            <p>Una obra emocionante que te hará reflexionar sobre la vida y la sociedad actual...</p>
+        </section>
+
+        <section>
+            <h2>Contador para el inicio</h2>
+            <div id="countdown"></div>
+        </section>
+
+        <section>
+            <h2>Lugar</h2>
+            <p>Teatro Principal, Ciudad</p>
+            <a href="https://www.google.com/maps" target="_blank">Ver en Google Maps</a>
+        </section>
+
+        <section>
+            <h2>Registro para boletos</h2>
+            <form id="ticketForm">
+                <input type="email" name="email" placeholder="Tu correo" required>
+                <input type="text" name="nombre" placeholder="Tu nombre" required>
+                <button type="submit">Registrarse</button>
+            </form>
+            <div id="folio"></div>
+        </section>
+    </main>
+</body>
+</html>
+
