@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
       
       // Aquí iría el envío con fetch a Apps Script
       // Enviar datos al servidor
-      fetch("https://script.google.com/macros/s/AKfycbxr5MrFBkTX86LFL7zzOsX9NK5s8uSeGdWX8rMtX33UiYjqBDickfapf-UvDD8Q55d1Cg/exec", {
+      fetch("https://script.google.com/macros/s/AKfycbzmOI1eHkp2zg8jrpoj5VGB3Tse-uyYpK1OfmAKeYGBTSbR5c6kX-1f4WN6YPExf-P1hQ/exec", {
         method: "POST",
         body: JSON.stringify({ nombre, correo: email }),
         headers: { "Content-Type": "application/json" }
