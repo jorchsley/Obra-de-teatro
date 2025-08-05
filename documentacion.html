@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Declaración del tipo de documento HTML5 -->
+    <meta charset="UTF-8">
+    <!-- Meta tag para hacer la página responsiva en dispositivos móviles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título de la página que aparece en la pestaña del navegador -->
+    <title>Documentación - Obra de Teatro</title>
+    <!-- Enlace al archivo CSS principal -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts: Importa la fuente Poppins con pesos 400 (normal) y 700 (bold) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome: Biblioteca de íconos para usar en toda la página -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Enlace al archivo JavaScript con defer para cargar después del HTML -->
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Header flotante que se mantiene fijo en la parte superior -->
+    <header class="floating-header">
+        <!-- Título principal de la página -->
+        <h1>Documentación y Recursos</h1>
+        <!-- Navegación principal del sitio -->
+        <nav class="floating-nav">
+            <!-- Lista de enlaces de navegación -->
+            <ul>
+                <!-- Enlace a la página de inicio con ícono de casa -->
+                <li><a href="index.html"><i class="fas fa-home"></i>Inicio</a></li>
+                <!-- Enlace a la página de actores con ícono de usuarios -->
+                <li><a href="actores.html"><i class="fas fa-users"></i>Actores</a></li>
+                <!-- Enlace a la página de escenografía con ícono de rodillo de pintura -->
+                <li><a href="escenografia.html"><i class="fas fa-paint-roller"></i>Escenografía</a></li>
+                <!-- Enlace a la página actual de documentación con ícono de archivo -->
+                <li><a href="documentacion.html"><i class="fas fa-file-alt"></i>Documentación</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contenido principal de la página -->
+    <main>
+        <!-- Sección de encabezado con imagen de fondo -->
+        <section class="bg-image">
+            <!-- Título de la sección -->
+            <h2>Documentación Completa</h2>
+            <!-- Descripción de la sección -->
+            <p>Accede a todos los recursos y materiales de la producción</p>
+        </section>
+
+        <!-- Sección de Guión y Texto -->
+        <section>
+            <!-- Título de la sección -->
+            <h2>Guión y Texto</h2>
+            <!-- Contenedor grid para organizar los elementos de documentación -->
+            <div class="documentacion-content">
+                <!-- Elemento de documentación: Guión Completo -->
+                <div class="doc-item">
+                    <!-- Título con ícono de libro -->
+                    <h3><i class="fas fa-book"></i> Guión Completo</h3>
+                    <!-- Descripción del contenido -->
+                    <p>El texto íntegro de la obra con todas las acotaciones escénicas, diálogos y notas de dirección.</p>
+                    <!-- Enlace de descarga directa al PDF del guión -->
+                    <a href="https://drive.google.com/file/d/1khRMmykNJXnNIAsavbhPGj50GW5IywFU/view?usp=sharing" download class="btn-download">
+                        <i class="fas fa-download"></i> Descargar PDF
+                    </a>
+                </div>
+
+                <!-- Elemento de documentación: Notas de Dirección -->
+                <div class="doc-item">
+                    <!-- Título con ícono de marcador -->
+                    <h3><i class="fas fa-highlighter"></i> Notas de Dirección</h3>
+                    <!-- Descripción del contenido -->
+                    <p>Anotaciones del director sobre interpretación, ritmo, emociones y momentos clave de la obra.</p>
+                    <!-- Botón de descarga (placeholder) -->
+                    <button class="btn-download">
+                        <i class="fas fa-download"></i> Descargar PDF
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Información Técnica -->
+        <section>
+            <!-- Título de la sección -->
+            <h2>Información Técnica</h2>
+            <!-- Contenedor grid para organizar los elementos técnicos -->
+            <div class="documentacion-content">
+                <!-- Elemento de documentación: Especificaciones Técnicas -->
+                <div class="doc-item">
+                    <!-- Título con ícono de engranajes -->
+                    <h3><i class="fas fa-cogs"></i> Especificaciones Técnicas</h3>
+                    <!-- Descripción del contenido -->
+                    <p>Detalles completos sobre iluminación, sonido, escenografía y requerimientos técnicos del teatro.</p>
+                    <!-- Lista de elementos incluidos -->
+                    <ul>
+                        <li>Planos de iluminación</li>
+                        <li>Diagramas de sonido</li>
+                        <li>Especificaciones de escenografía</li>
+                        <li>Lista de props y utilería</li>
+                    </ul>
+                    <!-- Botón de descarga -->
+                    <button class="btn-download">
+                        <i class="fas fa-download"></i> Descargar PDF
+                    </button>
+                </div>
+
+                <!-- Elemento de documentación: Cronograma de Ensayos -->
+                <div class="doc-item">
+                    <!-- Título con ícono de reloj -->
+                    <h3><i class="fas fa-clock"></i> Cronograma de Ensayos</h3>
+                    <!-- Descripción del contenido -->
+                    <p>Calendario detallado de ensayos, horarios, fechas importantes y cronograma de producción.</p>
+                    <!-- Lista de tipos de ensayos -->
+                    <ul>
+                        <li>Ensayos generales</li>
+                        <li>Ensayos técnicos</li>
+                        <li>Ensayos con vestuario</li>
+                        <li>Funciones de estreno</li>
+                    </ul>
+                    <!-- Botón de descarga -->
+                    <button class="btn-download">
+                        <i class="fas fa-download"></i> Descargar PDF
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Materiales Promocionales -->
+        <section>
+            <!-- Título de la sección -->
+            <h2>Materiales Promocionales</h2>
+            <!-- Contenedor grid para organizar los materiales promocionales -->
+            <div class="documentacion-content">
+                <!-- Elemento de documentación: Imágenes y Fotos -->
+                <div class="doc-item">
+                    <!-- Título con ícono de imagen -->
+                    <h3><i class="fas fa-image"></i> Imágenes y Fotos</h3>
+                    <!-- Descripción del contenido -->
+                    <p>Galería de imágenes de alta resolución para uso promocional y en medios de comunicación.</p>
+                    <!-- Grid de materiales promocionales -->
+                    <div class="promo-materials">
+                        <!-- Elemento promocional: Fotos de Escena -->
+                        <div class="promo-item">
+                            <i class="fas fa-image"></i>
+                            <span>Fotos de Escena</span>
+                            <a href="https://drive.google.com/drive/folders/1Fx5hw4MIN6WjTztJSEFY-ZhejhsAYTj_?usp=sharing" target="_blank" class="btn-drive">
+                                <i class="fas fa-external-link-alt"></i> Ver en Drive
+                            </a>
+                        </div>
+                        <!-- Elemento promocional: Fotos de Actores -->
+                        <div class="promo-item">
+                            <i class="fas fa-user-friends"></i>
+                            <span>Fotos de Actores</span>
+                            <a href="https://drive.google.com/drive/folders/1Fx5hw4MIN6WjTztJSEFY-ZhejhsAYTj_?usp=sharing" target="_blank" class="btn-drive">
+                                <i class="fas fa-external-link-alt"></i> Ver en Drive
+                            </a>
+                        </div>
+                        <!-- Elemento promocional: Behind the Scenes -->
+                        <div class="promo-item">
+                            <i class="fas fa-camera"></i>
+                            <span>Behind the Scenes</span>
+                            <a href="https://drive.google.com/drive/folders/1Fx5hw4MIN6WjTztJSEFY-ZhejhsAYTj_?usp=sharing" target="_blank" class="btn-drive">
+                                <i class="fas fa-external-link-alt"></i> Ver en Drive
+                            </a>
+                        </div>
+                        <!-- Elemento promocional: Escenografía -->
+                        <div class="promo-item">
+                            <i class="fas fa-palette"></i>
+                            <span>Escenografía</span>
+                            <a href="https://drive.google.com/drive/folders/1Fx5hw4MIN6WjTztJSEFY-ZhejhsAYTj_?usp=sharing" target="_blank" class="btn-drive">
+                                <i class="fas fa-external-link-alt"></i> Ver en Drive
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Botón de descarga del archivo ZIP -->
+                    <button class="btn-download">
+                        <i class="fas fa-download"></i> Descargar ZIP
+                    </button>
+                </div>
+
+                <!-- Elemento de documentación: Videos y Trailers -->
+                <div class="doc-item">
+                    <!-- Título con ícono de video -->
+                    <h3><i class="fas fa-video"></i> Videos y Trailers</h3>
+                    <!-- Descripción del contenido -->
+                    <p>Material audiovisual para promoción, incluyendo trailers, entrevistas y clips de la obra.</p>
+                    <!-- Grid de materiales de video -->
+                    <div class="promo-materials">
+                        <!-- Elemento promocional: Trailer Oficial -->
+                        <div class="promo-item">
+                            <i class="fas fa-play"></i>
+                            <span>Trailer Oficial</span>
+                            <a href="https://drive.google.com/drive/folders/1Fx5hw4MIN6WjTztJSEFY-ZhejhsAYTj_?usp=sharing" target="_blank" class="btn-drive">
+                                <i class="fas fa-external-link-alt"></i> Ver en Drive
+                            </a>
+                        </div>
+                        <!-- Elemento promocional: Entrevistas -->
+                        <div class="promo-item">
+                            <i class="fas fa-microphone"></i>
+                            <span>Entrevistas</span>
+                        </div>
+                        <!-- Elemento promocional: Clips de Escena -->
+                        <div class="promo-item">
+                            <i class="fas fa-film"></i>
+                            <span>Clips de Escena</span>
+                        </div>
+                        <!-- Elemento promocional: Making Of -->
+                        <div class="promo-item">
+                            <i class="fas fa-camera"></i>
+                            <span>Making Of</span>
+                        </div>
+                    </div>
+                    <!-- Botón para ver videos -->
+                    <button class="btn-download">
+                        <i class="fas fa-download"></i> Ver Videos
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Prensa y Comunicación -->
+        <section>
+            <!-- Título de la sección -->
+            <h2>Prensa y Comunicación</h2>
+            <!-- Contenedor grid para organizar los elementos de prensa -->
+            <div class="documentacion-content">
+                <!-- Elemento de documentación: Kit de Prensa -->
+                <div class="doc-item">
+                    <!-- Título con ícono de periódico -->
+                    <h3><i class="fas fa-newspaper"></i> Kit de Prensa</h3>
+                    <!-- Descripción del contenido -->
+                    <p>Información completa para medios de comunicación, incluyendo sinopsis, biografías y datos técnicos.</p>
+                    <!-- Lista de elementos del kit de prensa -->
+                    <ul>
+                        <li>Sinopsis de la obra</li>
+                        <li>Biografías de actores</li>
+                        <li>Información del director</li>
+                        <li>Datos de producción</li>
+                        <li>Contactos para prensa</li>
+                    </ul>
+                    <!-- Botón de descarga -->
+                    <button class="btn-download">
+                        <i class="fas fa-download"></i> Descargar PDF
+                    </button>
+                </div>
+
+                <!-- Elemento de documentación: Materiales de Marketing -->
+                <div class="doc-item">
+                    <!-- Título con ícono de megáfono -->
+                    <h3><i class="fas fa-bullhorn"></i> Materiales de Marketing</h3>
+                    <!-- Descripción del contenido -->
+                    <p>Recursos promocionales listos para usar en redes sociales, carteles y publicidad.</p>
+                    <!-- Grid de materiales de marketing -->
+                    <div class="promo-materials">
+                        <!-- Elemento promocional: Redes Sociales -->
+                        <div class="promo-item">
+                            <i class="fas fa-share-alt"></i>
+                            <span>Redes Sociales</span>
+                        </div>
+                        <!-- Elemento promocional: Carteles -->
+                        <div class="promo-item">
+                            <i class="fas fa-print"></i>
+                            <span>Carteles</span>
+                        </div>
+                        <!-- Elemento promocional: Email Marketing -->
+                        <div class="promo-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>Email Marketing</span>
+                        </div>
+                        <!-- Elemento promocional: Publicidad -->
+                        <div class="promo-item">
+                            <i class="fas fa-ad"></i>
+                            <span>Publicidad</span>
+                        </div>
+                    </div>
+                    <!-- Botón de descarga del archivo ZIP -->
+                    <button class="btn-download">
+                        <i class="fas fa-download"></i> Descargar ZIP
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Información de Contacto -->
+        <section>
+            <!-- Título de la sección -->
+            <h2>Información de Contacto</h2>
+            <!-- Grid para organizar las tarjetas de contacto -->
+            <div class="actores-grid">
+                <!-- Tarjeta de contacto general -->
+                <div class="actor-card">
+                    <!-- Ícono de teléfono -->
+                    <div class="actor-foto">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <!-- Título de la tarjeta -->
+                    <h3>Contacto General</h3>
+                    <!-- Información de contacto -->
+                    <p><strong>Teléfono:</strong> +52 55 1234 5678</p>
+                    <p><strong>Email:</strong> info@obrateatro.com</p>
+                    <p><strong>Horario:</strong> Lunes a Viernes 9:00 - 18:00</p>
+                </div>
+
+                <!-- Tarjeta de ventas de boletos -->
+                <div class="actor-card">
+                    <!-- Ícono de boletos -->
+                    <div class="actor-foto">
+                        <i class="fas fa-ticket-alt"></i>
+                    </div>
+                    <!-- Título de la tarjeta -->
+                    <h3>Ventas de Boletos</h3>
+                    <!-- Información de ventas -->
+                    <p><strong>Teléfono:</strong> +52 55 1234 5679</p>
+                    <p><strong>Email:</strong> boletos@obrateatro.com</p>
+                    <p><strong>Online:</strong> www.obrateatro.com/boletos</p>
+                </div>
+
+                <!-- Tarjeta de prensa y medios -->
+                <div class="actor-card">
+                    <!-- Ícono de periódico -->
+                    <div class="actor-foto">
+                        <i class="fas fa-newspaper"></i>
+                    </div>
+                    <!-- Título de la tarjeta -->
+                    <h3>Prensa y Medios</h3>
+                    <!-- Información de prensa -->
+                    <p><strong>Email:</strong> prensa@obrateatro.com</p>
+                    <p><strong>WhatsApp:</strong> +52 55 1234 5680</p>
+                    <p><strong>Horario:</strong> 24/7 para emergencias</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html> 

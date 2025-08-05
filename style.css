@@ -1,0 +1,956 @@
+/* ===== IMPORTS Y FUENTES ===== */
+/* Importa la fuente Poppins de Google Fonts con pesos 400 (normal) y 700 (bold) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+/* Importa Font Awesome para íconos con todas las clases disponibles */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
+/* ===== ESTILOS BASE DEL CUERPO ===== */
+body {
+    /* Aplica la fuente Poppins como principal, con sans-serif como respaldo */
+    font-family: 'Poppins', sans-serif;
+    /* Elimina márgenes y padding por defecto del navegador */
+    margin: 0;
+    padding: 0;
+    /* Establece una imagen de fondo por defecto para todas las páginas */
+    background: url('https://images.unsplash.com/photo-1607979849408-7e4b34a21b66?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
+    /* Hace que la imagen cubra todo el fondo */
+    background-size: cover;
+    /* Color de texto principal */
+    color: #333;
+    /* Permite posicionamiento relativo para elementos hijos */
+    position: relative;
+}
+
+/* ===== FONDO ESPECÍFICO PARA LA PÁGINA DE INICIO ===== */
+body.index-page {
+    /* URL de la imagen de fondo específica para la página principal */
+    background-image: url('https://images.unsplash.com/photo-1503095396549-807759245b35?auto=format&fit=crop&w=1920&q=80');
+
+    /* Hace que la imagen de fondo sea fija mientras se desplaza el contenido */
+    background-attachment: fixed;
+
+    /* Asegura que la imagen cubra todo el fondo */
+    background-size: cover;
+
+    /* Centra la imagen de fondo */
+    background-position: center;
+
+    /* Evita que la imagen de fondo se repita */
+    background-repeat: no-repeat;
+}
+
+/* ===== CAPA DE SUPERPOSICIÓN ===== */
+/* Crea una capa semitransparente sobre el fondo para mejorar la legibilidad */
+body::before {
+    /* Crea un pseudo-elemento */
+    content: "";
+    /* Posiciona la capa de forma fija en toda la pantalla */
+    position: fixed;
+    /* Extiende la capa a todos los bordes de la pantalla */
+    top: 0; left: 0; right: 0; bottom: 0;
+    /* Color blanco semitransparente (85% de opacidad) */
+    background-color: rgba(255, 255, 255, 0.85);
+    /* Coloca la capa detrás del contenido principal */
+    z-index: -1;
+}
+
+/* ===== HEADER FLOTANTE ===== */
+.floating-header {
+    /* Fija el header en la parte superior de la pantalla */
+    position: fixed;
+    /* Posiciona el header en la parte superior */
+    top: 0;
+    /* Extiende el header de lado a lado */
+    left: 0;
+    right: 0;
+    /* Fondo oscuro semitransparente */
+    background-color: rgba(34, 34, 34, 0.95);
+    /* Color de texto blanco */
+    color: white;
+    /* Espaciado interno del header */
+    padding: 1rem 2rem;
+    /* Centra el contenido del header */
+    text-align: center;
+    /* Sombra sutil para dar profundidad */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    /* Asegura que el header esté por encima de otros elementos */
+    z-index: 1000;
+    /* Efecto de desenfoque del fondo */
+    backdrop-filter: blur(10px);
+    /* Transición suave para cambios de estado */
+    transition: all 0.3s ease;
+}
+
+/* ===== HEADER COMPACTO AL HACER SCROLL ===== */
+.floating-header.scrolled {
+    /* Reduce el padding cuando se hace scroll */
+    padding: 0.5rem 2rem;
+    /* Hace el fondo más opaco */
+    background-color: rgba(34, 34, 34, 0.98);
+}
+
+/* Reduce el tamaño del título cuando el header está compacto */
+.floating-header.scrolled h1 {
+    font-size: 1.5em;
+    margin: 0.5rem 0;
+}
+
+/* Ajusta el margen de la navegación en modo compacto */
+.floating-header.scrolled nav {
+    margin-top: 0.5rem;
+}
+
+/* ===== ESTILOS DEL TÍTULO DEL HEADER ===== */
+header h1 {
+    /* Elimina márgenes verticales y establece margen inferior */
+    margin: 0 0 1rem 0;
+    /* Tamaño grande para el título principal */
+    font-size: 2.5em;
+    /* Peso de fuente bold */
+    font-weight: 700;
+}
+
+/* ===== NAVEGACIÓN ===== */
+/* Lista de navegación */
+nav ul {
+    /* Elimina los puntos de la lista */
+    list-style: none;
+    /* Elimina padding y margen por defecto */
+    padding: 0;
+    margin: 0;
+    /* Usa flexbox para alinear elementos horizontalmente */
+    display: flex;
+    /* Centra los elementos de navegación */
+    justify-content: center;
+    /* Espacio entre elementos de navegación */
+    gap: 2rem;
+}
+
+/* Elementos individuales de la lista */
+nav ul li {
+    /* Muestra los elementos en línea */
+    display: inline;
+}
+
+/* Enlaces de navegación */
+nav ul li a {
+    /* Color de texto blanco */
+    color: white;
+    /* Elimina el subrayado de los enlaces */
+    text-decoration: none;
+    /* Peso de fuente bold */
+    font-weight: bold;
+    /* Tamaño de fuente */
+    font-size: 1em;
+    /* Transición suave para cambios de color */
+    transition: color 0.3s ease;
+}
+
+/* Efecto hover en los enlaces */
+nav ul li a:hover {
+    /* Color dorado al pasar el mouse */
+    color: #ffd700;
+}
+
+/* Enlace activo/seleccionado */
+nav ul li a.active {
+    /* Color dorado para el enlace activo */
+    color: #ffd700;
+    /* Fondo semitransparente */
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Padding para crear un botón visual */
+    padding: 0.5rem 1rem;
+    /* Bordes redondeados */
+    border-radius: 20px;
+    /* Transición suave para todos los cambios */
+    transition: all 0.3s ease;
+}
+
+/* Íconos en los enlaces de navegación */
+nav ul li a i {
+    /* Espacio entre el ícono y el texto */
+    margin-right: 5px;
+}
+
+/* ===== CONTENIDO PRINCIPAL ===== */
+main {
+    /* Padding superior aumentado para compensar el header fijo */
+    padding: 8em 1em 2em 1em;
+}
+
+/* ===== SECCIONES COMO TARJETAS ===== */
+section {
+    /* Fondo blanco para las secciones */
+    background-color: #ffffff;
+    /* Espaciado interno */
+    padding: 2em;
+    /* Margen externo y centrado */
+    margin: 2em auto;
+    /* Bordes redondeados */
+    border-radius: 12px;
+    /* Ancho máximo para evitar que sea muy ancha */
+    max-width: 800px;
+    /* Sombra sutil para dar profundidad */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    /* Animación de aparición */
+    animation: fadeIn 1s ease forwards;
+    /* Inicia invisible para la animación */
+    opacity: 0;
+}
+
+/* ===== ANIMACIONES DE APARICIÓN ESCALONADAS ===== */
+/* Cada sección aparece con un pequeño retraso para crear un efecto cascada */
+section:nth-child(1) { animation-delay: 0.1s; }
+section:nth-child(2) { animation-delay: 0.2s; }
+section:nth-child(3) { animation-delay: 0.3s; }
+section:nth-child(4) { animation-delay: 0.4s; }
+
+/* ===== SECCIÓN DE INICIO CON IMAGEN DE FONDO ===== */
+.bg-image {
+    /* Gradiente oscuro sobre la imagen de fondo para mejorar legibilidad */
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                url('https://images.unsplash.com/photo-1503095396549-807759245b35?auto=format&fit=crop&w=1920&q=80');
+    /* La imagen cubre todo el contenedor */
+    background-size: cover;
+    /* Centra la imagen */
+    background-position: center;
+    /* Texto blanco para contraste */
+    color: white;
+    /* Centra el texto */
+    text-align: center;
+}
+
+/* ===== GALERÍA DE IMÁGENES DE LA OBRA ===== */
+.imagenes-obra {
+    /* Usa flexbox para alinear las imágenes */
+    display: flex;
+    /* Centra las imágenes horizontalmente */
+    justify-content: center;
+    /* Espacio entre imágenes */
+    gap: 1rem;
+    /* Margen superior */
+    margin-top: 2rem;
+    /* Permite que las imágenes se envuelvan en pantallas pequeñas */
+    flex-wrap: wrap;
+}
+
+/* Estilos individuales para cada imagen */
+.imagenes-obra img {
+    /* Ancho fijo para las imágenes */
+    width: 200px;
+    /* Alto fijo para mantener proporciones */
+    height: 150px;
+    /* Mantiene la proporción de la imagen sin distorsionarla */
+    object-fit: cover;
+    /* Bordes redondeados */
+    border-radius: 8px;
+    /* Sombra sutil */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    /* Transición suave para efectos hover */
+    transition: transform 0.3s ease;
+}
+
+/* Efecto hover en las imágenes */
+.imagenes-obra img:hover {
+    /* Escala la imagen ligeramente al pasar el mouse */
+    transform: scale(1.05);
+}
+
+/* ===== CONTADOR REGRESIVO ===== */
+#countdown {
+    /* Tamaño grande para el contador */
+    font-size: 2.5em;
+    /* Peso de fuente bold */
+    font-weight: bold;
+    /* Gradiente de fondo atractivo */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    /* Texto blanco */
+    color: white;
+    /* Espaciado interno */
+    padding: 1.5em;
+    /* Centra el texto */
+    text-align: center;
+    /* Bordes redondeados */
+    border-radius: 12px;
+    /* Ancho máximo */
+    max-width: 400px;
+    /* Centra el contador */
+    margin: auto;
+    /* Sombra pronunciada para destacar */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    /* Sombra de texto para mejor legibilidad */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+/* ===== SECCIÓN DE UBICACIÓN ===== */
+#ubicacion p {
+    /* Tamaño de fuente ligeramente mayor */
+    font-size: 1.1em;
+    /* Margen vertical pequeño */
+    margin: 0.5em 0;
+    /* Usa flexbox para alinear ícono y texto */
+    display: flex;
+    /* Centra verticalmente los elementos */
+    align-items: center;
+    /* Espacio entre ícono y texto */
+    gap: 0.5em;
+}
+
+/* Íconos en la sección de ubicación */
+#ubicacion i {
+    /* Color azul para los íconos */
+    color: #667eea;
+    /* Ancho fijo para alineación */
+    width: 20px;
+}
+
+/* ===== BOTÓN DE MAPAS ===== */
+.btn-maps {
+    /* Muestra como bloque en línea */
+    display: inline-block;
+    /* Gradiente de fondo */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    /* Texto blanco */
+    color: white;
+    /* Elimina subrayado */
+    text-decoration: none;
+    /* Espaciado interno */
+    padding: 0.8em 1.5em;
+    /* Bordes redondeados */
+    border-radius: 8px;
+    /* Margen superior */
+    margin-top: 1rem;
+    /* Transiciones suaves */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Sombra inicial */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Efecto hover en el botón de mapas */
+.btn-maps:hover {
+    /* Eleva ligeramente el botón */
+    transform: translateY(-2px);
+    /* Sombra más pronunciada */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+/* ===== FORMULARIO ===== */
+form {
+    /* Gradiente de fondo sutil */
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    /* Espaciado interno */
+    padding: 2em;
+    /* Bordes redondeados */
+    border-radius: 12px;
+    /* Sombra sutil */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    /* Ancho máximo */
+    max-width: 400px;
+    /* Centra el formulario */
+    margin: auto;
+    /* Organiza los elementos en columna */
+    display: flex;
+    flex-direction: column;
+    /* Espacio entre elementos */
+    gap: 1rem;
+}
+
+/* Campos de entrada del formulario */
+form input {
+    /* Espaciado interno */
+    padding: 1em;
+    /* Borde sutil */
+    border: 2px solid #e1e5e9;
+    /* Bordes redondeados */
+    border-radius: 8px;
+    /* Tamaño de fuente */
+    font-size: 1em;
+    /* Transiciones suaves */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Estado de foco en los campos de entrada */
+form input:focus {
+    /* Elimina el outline por defecto */
+    outline: none;
+    /* Borde azul cuando está enfocado */
+    border-color: #667eea;
+    /* Sombra azul sutil */
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* ===== BOTONES ===== */
+button {
+    /* Espaciado interno */
+    padding: 1em;
+    /* Gradiente de fondo */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    /* Texto blanco */
+    color: white;
+    /* Sin borde */
+    border: none;
+    /* Bordes redondeados */
+    border-radius: 8px;
+    /* Cursor de mano */
+    cursor: pointer;
+    /* Peso de fuente bold */
+    font-weight: bold;
+    /* Tamaño de fuente */
+    font-size: 1.1em;
+    /* Transiciones suaves */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Sombra inicial */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Efecto hover en botones */
+button:hover {
+    /* Eleva ligeramente el botón */
+    transform: translateY(-2px);
+    /* Sombra más pronunciada */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+/* Íconos en botones */
+button i {
+    /* Espacio entre ícono y texto */
+    margin-right: 0.5em;
+}
+
+/* ===== ÁREA DE FOLIO ===== */
+#folio {
+    /* Margen superior */
+    margin-top: 1rem;
+    /* Espaciado interno */
+    padding: 1rem;
+    /* Fondo semitransparente */
+    background: rgba(255, 255, 255, 0.9);
+    /* Bordes redondeados */
+    border-radius: 8px;
+    /* Centra el texto */
+    text-align: center;
+    /* Peso de fuente bold */
+    font-weight: bold;
+    /* Color de texto */
+    color: #333;
+}
+
+/* ===== SECCIÓN DE DESCARGAR GUION ===== */
+#descargar-guion {
+    /* Centra el contenido */
+    text-align: center !important;
+    /* Fondo semitransparente */
+    background: rgba(255, 255, 255, 0.9) !important;
+    /* Espaciado interno */
+    padding: 2rem !important;
+    /* Bordes redondeados */
+    border-radius: 12px !important;
+    /* Margen externo */
+    margin: 2rem auto !important;
+    /* Sombra sutil */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1) !important;
+    /* Ancho máximo */
+    max-width: 800px !important;
+}
+
+/* Título de la sección de descarga */
+#descargar-guion h2 {
+    color: #333;
+    margin-bottom: 1rem;
+    font-size: 2em;
+}
+
+/* Párrafo de la sección de descarga */
+#descargar-guion p {
+    color: #666;
+    margin-bottom: 1.5rem;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+/* Botón de descarga */
+#descargar-guion .btn-download {
+    /* Usa flexbox para alinear ícono y texto */
+    display: inline-flex;
+    /* Centra verticalmente */
+    align-items: center;
+    /* Espacio entre ícono y texto */
+    gap: 0.5rem;
+    /* Tamaño de fuente */
+    font-size: 1.1em;
+    /* Espaciado interno */
+    padding: 1rem 2rem;
+    /* Elimina subrayado */
+    text-decoration: none;
+}
+
+/* Ícono del botón de descarga */
+#descargar-guion .btn-download i {
+    font-size: 1.2em;
+}
+
+/* ===== ANIMACIÓN DE APARICIÓN ===== */
+@keyframes fadeIn {
+    /* Estado inicial: invisible y desplazado hacia abajo */
+    from { 
+        opacity: 0; 
+        transform: translateY(30px); 
+    }
+    /* Estado final: visible y en posición normal */
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+/* ===== SECCIÓN DE ACTORES ===== */
+/* Grid para organizar las tarjetas de actores */
+.actores-grid {
+    /* Usa CSS Grid para organizar las tarjetas */
+    display: grid;
+    /* Columnas responsivas: mínimo 300px, máximo 1 fracción */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* Espacio entre tarjetas */
+    gap: 2rem;
+    /* Margen superior */
+    margin-top: 2rem;
+}
+
+/* Tarjeta individual de actor */
+.actor-card {
+    /* Gradiente de fondo sutil */
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    /* Espaciado interno */
+    padding: 2rem;
+    /* Bordes redondeados */
+    border-radius: 12px;
+    /* Centra el contenido */
+    text-align: center;
+    /* Sombra sutil */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    /* Transiciones suaves */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto hover en tarjetas de actores */
+.actor-card:hover {
+    /* Eleva ligeramente la tarjeta */
+    transform: translateY(-5px);
+    /* Sombra más pronunciada */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Ícono/foto del actor */
+.actor-foto {
+    /* Tamaño grande para el ícono */
+    font-size: 4rem;
+    /* Color azul para el ícono */
+    color: #667eea;
+    /* Margen inferior */
+    margin-bottom: 1rem;
+}
+
+/* Nombre del actor */
+.actor-card h3 {
+    color: #333;
+    margin-bottom: 1rem;
+    font-size: 1.3em;
+}
+
+/* Información del actor */
+.actor-card p {
+    margin: 0.5rem 0;
+    color: #666;
+}
+
+/* Redes sociales del actor */
+.actor-redes {
+    /* Margen superior */
+    margin-top: 1rem;
+    /* Usa flexbox para alinear los íconos */
+    display: flex;
+    /* Centra los íconos */
+    justify-content: center;
+    /* Espacio entre íconos */
+    gap: 1rem;
+}
+
+/* Enlaces de redes sociales */
+.actor-redes a {
+    /* Color azul para los íconos */
+    color: #667eea;
+    /* Tamaño de los íconos */
+    font-size: 1.5rem;
+    /* Transiciones suaves */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Efecto hover en íconos de redes sociales */
+.actor-redes a:hover {
+    /* Color púrpura al pasar el mouse */
+    color: #764ba2;
+    /* Escala ligeramente el ícono */
+    transform: scale(1.2);
+}
+
+/* ===== SECCIÓN DE ESCENOGRAFÍA ===== */
+/* Contenedor principal de escenografía */
+.escenografia-content {
+    /* Usa CSS Grid para organizar el contenido */
+    display: grid;
+    /* Dos columnas de igual tamaño */
+    grid-template-columns: 1fr 1fr;
+    /* Espacio entre columnas */
+    gap: 2rem;
+    /* Margen superior */
+    margin-top: 2rem;
+}
+
+/* Títulos de información de escenografía */
+.escenografia-info h3 {
+    color: #667eea;
+    margin-bottom: 1rem;
+}
+
+/* Galería de elementos de escenografía */
+.escenografia-gallery {
+    /* Usa CSS Grid para organizar los elementos */
+    display: grid;
+    /* Columnas responsivas: mínimo 150px */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    /* Espacio entre elementos */
+    gap: 1rem;
+}
+
+/* Elementos individuales de la galería */
+.gallery-item {
+    /* Gradiente de fondo */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    /* Texto blanco */
+    color: white;
+    /* Espaciado interno */
+    padding: 2rem 1rem;
+    /* Bordes redondeados */
+    border-radius: 8px;
+    /* Centra el contenido */
+    text-align: center;
+    /* Transición suave */
+    transition: transform 0.3s ease;
+    /* Cursor de mano */
+    cursor: pointer;
+}
+
+/* Efecto hover en elementos de galería */
+.gallery-item:hover {
+    /* Escala ligeramente el elemento */
+    transform: scale(1.05);
+}
+
+/* Íconos en elementos de galería */
+.gallery-item i {
+    /* Tamaño grande para los íconos */
+    font-size: 2rem;
+    /* Margen inferior */
+    margin-bottom: 0.5rem;
+    /* Muestra como bloque */
+    display: block;
+}
+
+/* Texto en elementos de galería */
+.gallery-item p {
+    margin: 0;
+    font-weight: bold;
+}
+
+/* ===== SECCIÓN DE DOCUMENTACIÓN ===== */
+/* Contenedor principal de documentación */
+.documentacion-content {
+    /* Usa CSS Grid para organizar el contenido */
+    display: grid;
+    /* Dos columnas de igual tamaño */
+    grid-template-columns: 1fr 1fr;
+    /* Espacio entre columnas */
+    gap: 2rem;
+    /* Margen superior */
+    margin-top: 2rem;
+}
+
+/* Elementos individuales de documentación */
+.doc-item {
+    /* Gradiente de fondo sutil */
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    /* Espaciado interno */
+    padding: 2rem;
+    /* Bordes redondeados */
+    border-radius: 12px;
+    /* Sombra sutil */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Títulos de elementos de documentación */
+.doc-item h3 {
+    color: #667eea;
+    margin-bottom: 1rem;
+    /* Usa flexbox para alinear ícono y texto */
+    display: flex;
+    align-items: center;
+    /* Espacio entre ícono y texto */
+    gap: 0.5rem;
+}
+
+/* Botón de descarga */
+.btn-download {
+    /* Gradiente de fondo */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    /* Texto blanco */
+    color: white;
+    /* Sin borde */
+    border: none;
+    /* Espaciado interno */
+    padding: 0.8em 1.5em;
+    /* Bordes redondeados */
+    border-radius: 8px;
+    /* Cursor de mano */
+    cursor: pointer;
+    /* Peso de fuente bold */
+    font-weight: bold;
+    /* Margen superior */
+    margin-top: 1rem;
+    /* Transiciones suaves */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto hover en botón de descarga */
+.btn-download:hover {
+    /* Eleva ligeramente el botón */
+    transform: translateY(-2px);
+    /* Sombra más pronunciada */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+/* ===== BOTONES DE GOOGLE DRIVE ===== */
+.btn-drive {
+    /* Estilo base del botón de Drive */
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #4285f4;
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin-top: 8px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(66, 133, 244, 0.3);
+}
+
+.btn-drive:hover {
+    /* Efecto hover para el botón de Drive */
+    background-color: #3367d6;
+    box-shadow: 0 4px 12px rgba(66, 133, 244, 0.4);
+    transform: translateY(-1px);
+    color: white;
+    text-decoration: none;
+}
+
+.btn-drive i {
+    /* Estilo para el ícono del botón */
+    font-size: 0.9rem;
+}
+
+/* ===== MATERIALES PROMOCIONALES ===== */
+/* Grid para materiales promocionales */
+.promo-materials {
+    /* Usa CSS Grid para organizar los elementos */
+    display: grid;
+    /* Columnas responsivas: mínimo 120px */
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    /* Espacio entre elementos */
+    gap: 1rem;
+    /* Margen superior */
+    margin-top: 1rem;
+}
+
+/* Elementos individuales promocionales */
+.promo-item {
+    /* Fondo blanco */
+    background: white;
+    /* Espaciado interno */
+    padding: 1rem;
+    /* Bordes redondeados */
+    border-radius: 8px;
+    /* Centra el contenido */
+    text-align: center;
+    /* Sombra sutil */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    /* Transición suave */
+    transition: transform 0.3s ease;
+    /* Cursor de mano */
+    cursor: pointer;
+}
+
+/* Efecto hover en elementos promocionales */
+.promo-item:hover {
+    /* Eleva ligeramente el elemento */
+    transform: translateY(-3px);
+    /* Sombra más pronunciada */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* Íconos en elementos promocionales */
+.promo-item i {
+    /* Tamaño de los íconos */
+    font-size: 1.5rem;
+    /* Color azul */
+    color: #667eea;
+    /* Margen inferior */
+    margin-bottom: 0.5rem;
+    /* Muestra como bloque */
+    display: block;
+}
+
+/* Texto en elementos promocionales */
+.promo-item span {
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* ===== LISTAS EN ELEMENTOS DE DOCUMENTACIÓN ===== */
+/* Lista sin viñetas */
+.doc-item ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+/* Elementos de la lista */
+.doc-item ul li {
+    /* Espaciado vertical */
+    padding: 0.5rem 0;
+    /* Borde inferior sutil */
+    border-bottom: 1px solid #e1e5e9;
+    /* Color de texto gris */
+    color: #666;
+}
+
+/* Último elemento de la lista sin borde */
+.doc-item ul li:last-child {
+    border-bottom: none;
+}
+
+/* Viñeta personalizada para elementos de lista */
+.doc-item ul li:before {
+    /* Contenido: punto */
+    content: "•";
+    /* Color azul para la viñeta */
+    color: #667eea;
+    /* Peso de fuente bold */
+    font-weight: bold;
+    /* Margen derecho */
+    margin-right: 0.5rem;
+}
+
+/* ===== DISEÑO RESPONSIVO ===== */
+/* Estilos para pantallas pequeñas (máximo 768px) */
+@media (max-width: 768px) {
+    /* Header más compacto en móviles */
+    .floating-header {
+        padding: 0.5rem 1rem;
+    }
+    
+    /* Título más pequeño en móviles */
+    .floating-header h1 {
+        font-size: 1.5em;
+        margin: 0.5rem 0;
+    }
+    
+    /* Título aún más pequeño cuando está compacto */
+    .floating-header.scrolled h1 {
+        font-size: 1.2em;
+    }
+    
+    /* Navegación en columna para móviles */
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    /* Enlaces de navegación más pequeños */
+    nav ul li a {
+        font-size: 0.9em;
+        padding: 0.3rem 0.8rem;
+    }
+    
+    /* Imágenes en columna para móviles */
+    .imagenes-obra {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    /* Imágenes responsivas */
+    .imagenes-obra img {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    /* Contador más pequeño en móviles */
+    #countdown {
+        font-size: 2em;
+        padding: 1em;
+    }
+    
+    /* Secciones más compactas en móviles */
+    section {
+        margin: 1em;
+        padding: 1.5em;
+    }
+    
+    /* Grid de actores en una columna */
+    .actores-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Contenido de escenografía y documentación en una columna */
+    .escenografia-content,
+    .documentacion-content {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Galería de escenografía más compacta */
+    .escenografia-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+    
+    /* Materiales promocionales más compactos */
+    .promo-materials {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+    
+    /* Sección de descarga más compacta */
+    #descargar-guion {
+        padding: 1.5rem;
+        margin: 1rem 0;
+    }
+    
+    /* Título de descarga más pequeño */
+    #descargar-guion h2 {
+        font-size: 1.5em;
+    }
+    
+    /* Párrafo de descarga más pequeño */
+    #descargar-guion p {
+        font-size: 1em;
+    }
+    
+    /* Botón de descarga responsivo */
+    #descargar-guion .btn-download {
+        font-size: 1em;
+        padding: 0.8rem 1.5rem;
+        width: 100%;
+        justify-content: center;
+    }
+}
