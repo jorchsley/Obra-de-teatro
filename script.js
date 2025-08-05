@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const countdownEl = document.getElementById("countdown");
   
   if (countdownEl) {
-    const estreno = new Date("2025-08-07T09:30:00").getTime();
+    const estreno = new Date("2025-08-08T10:00:00").getTime();
 
     const timer = setInterval(() => {
       const ahora = new Date().getTime();
